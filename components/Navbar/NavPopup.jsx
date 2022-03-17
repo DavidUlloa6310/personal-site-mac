@@ -11,7 +11,7 @@ function NavPopup(props) {
 
   return (
     <ol
-      className={`bg-white border-black border-2 shadow-[2px_2px_0px_0px_#000] ${props.className}`}
+      className={`bg-white border-black border-2 shadow-[2px_2px_0px_0px_#000] z-10 ${props.className}`}
     >
       {data.map((item, index) => {
         if (item.break) {

@@ -12,6 +12,9 @@ module.exports = {
       backgroundImage: (theme) => ({
         "mac-bg": "url('/mac_bg.jpg')",
       }),
+      cursor: {
+        mac: "url(/cursor.cur), pointer",
+      },
     },
   },
   plugins: [],

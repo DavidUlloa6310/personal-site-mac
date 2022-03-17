@@ -1,7 +1,6 @@
 import { useRef } from "react";
-import Image from "next/image";
 
-import Folder from "../components/icons/Folder";
+import DraggableIcon from "../components/icons/Draggable/DraggableIcon";
 import Navbar from "../components/Navbar/Navbar";
 import StartupContainer from "../components/StartupContainer";
 import HappyComputer from "../components/icons/HappyComputer";
@@ -14,13 +13,20 @@ function Desktop(props) {
       <Navbar></Navbar>
       <main
         ref={main}
-        className="flex justify-center items-center bg-black bg-mac-bg bg-repeat-round w-screen h-screen bg-[length:400px_600px] sm:bg-[length:1000px] relative"
+        id="desktop_main"
+        className="flex justify-center items-center bg-black bg-mac-bg bg-repeat-round w-screen h-screen bg-[length:1000px_1000px] sm:bg-[length:1000px] relative"
       >
-        <Folder
+        <DraggableIcon
           bounds={main}
-          className="w-16 h-16 z-10"
+          icon="folder"
           name="untitled folder"
-        />
+        ></DraggableIcon>
+        <DraggableIcon
+          bounds={main}
+          icon="macWWW"
+          name="untitled folder"
+        ></DraggableIcon>
+        {/* <MacWWW className=" w-16 h-16" name="my website"></MacWWW> */}
       </main>
     </>
   );
