@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
+import CommandKey from "../../components/icons/CommandKey";
+
 function NavPopup(props) {
   const data = props.data;
-
-  const [isPopupSelected, setIsPopupSelected] = useState(false);
 
   if (data === undefined) {
     return <div></div>;
@@ -18,20 +18,25 @@ function NavPopup(props) {
           return (
             <li
               key={index}
-              className="object-contain h-1 border-t-2 border-dotted border-gray-500 my-3"
+              className="object-contain h-1 border-t-2 border-dotted border-gray-500 my-3 select-none"
             ></li>
           );
         }
         return (
           <li
             onMouseUp={() => {
-              setIsPopupSelected(false);
               props.setIsSelected(false);
             }}
-            className={`whitespace-nowrap object-contain px-5 py-2 hover:bg-black hover:text-white`}
+            className={`flex justify-between select-none whitespace-nowrap object-contain px-5 py-2 hover:bg-black hover:text-white hover:fill-white`}
             key={index}
           >
-            {item.text}
+            <h1>{item.text}</h1>
+            {item.shortcut && (
+              <div className="whitespace-nowrap flex flex-row justify-end items-center min-w-[100px]">
+                <CommandKey className=" w-5 h-5 mx-1" />
+                {item.shortcut}
+              </div>
+            )}
           </li>
         );
       })}

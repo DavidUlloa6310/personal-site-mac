@@ -14,7 +14,7 @@ import {
 
 function Navbar(props) {
   return (
-    <div className="flex flex-row flex-wrap justify-center sm:justify-between h-16 sm:h-10 w-full bg-white absolute top-0 left-0 border-b-2 border-black font-chicago text-xs sm:text-base">
+    <div className="flex flex-row flex-wrap justify-center sm:justify-between h-16 sm:h-10 w-full bg-white absolute top-0 left-0 border-b-2 border-black font-chicago text-xs sm:text-base z-10">
       <ol className="flex flex-row justify-center items-center sm:ml-6">
         <NavItem>
           <PixelApple className=" h-5 w-5"></PixelApple>
