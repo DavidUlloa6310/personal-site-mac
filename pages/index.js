@@ -10,6 +10,7 @@ export default function Home() {
   useEffect(() => {
     function alternatePowerButton() {
       let macintoshButton = document.getElementById("power_button");
+      macintoshButton.style.cursor = "pointer";
       macintoshButton.style.fill = powerColor;
       macintoshButton.onclick = enlargeMacintosh;
       togglePowerColor();
@@ -23,7 +24,7 @@ export default function Home() {
       }
     }
 
-    const interval = setInterval(alternatePowerButton, 2000);
+    const interval = setInterval(alternatePowerButton, 750);
     return () => clearInterval(interval);
   }, [powerColor]);
 
@@ -42,7 +43,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex flex-col justify-center items-center w-screen h-screen overflow-hidden">
+    <main className="flex flex-col justify-center items-center w-screen h-screen overflow-hidden cursor-default">
       <Macintosh className="max-w-xl"></Macintosh>
     </main>
   );

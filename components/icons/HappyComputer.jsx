@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function HappyComputer(props) {
   return (
-    <div className=" w-20 h-20 relative">
+    <div className={`w-20 h-20 relative ${props.className}`} id={props.id}>
       <Image
         alt="Mac Logo"
         layout="fill"

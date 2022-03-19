@@ -23,24 +23,27 @@ function DraggableIcon(props) {
 
   useOutsideAlerter(draggableDiv, handleOutsideClick);
 
-  console.log(props.bounds);
-
   return (
     <div
       className={`${isActive && " z-50 "}`}
       onMouseDown={() => {
         setIsActive(true);
       }}
+      onClick={(e) => {
+        if (e.detail == 2 && props.onDoubleClick) {
+          props.onDoubleClick();
+        }
+      }}
     >
       <Draggable
-        bounds={"#desktop_main"}
+        bounds="#desktop_main"
         onDrag={() => {
           setIsActive(true);
         }}
       >
         <div
           ref={draggableDiv}
-          className={`flex flex-col justify-center items-center ${props.className}`}
+          className={`flex flex-col justify-center items-center max-w-fit ${props.className}`}
         >
           {icons[props.icon]}
           <DraggableIconText isActive={isActive}>
