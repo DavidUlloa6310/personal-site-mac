@@ -93,10 +93,12 @@ function Desktop(props) {
 
   return (
     <>
-      <div
-        id="black_div"
-        className=" w-screen h-screen absolute bottom-0 bg-black z-50"
-      ></div>
+      {!showUI && (
+        <div
+          id="black_div"
+          className=" w-screen h-screen absolute bottom-0 bg-black z-50"
+        ></div>
+      )}
       {showUI && <Navbar id="navbar"></Navbar>}
       <main
         ref={main}

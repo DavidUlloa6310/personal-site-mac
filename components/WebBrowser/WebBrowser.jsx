@@ -1,7 +1,7 @@
 import React from "react";
 
 import ProfilePic from "../ProfilePic";
-import ProjectCard from "./ProjectCard";
+import ProjectList from "./ProjectList";
 
 import Draggable from "react-draggable";
 
@@ -9,7 +9,7 @@ function WebBrowser(props) {
   return (
     <Draggable>
       <div className=" bg-gray-200 border-[1px] border-black rounded-sm w-fit">
-        <div className="flex flex-col items-center border-black border-2 bg-white m-[4px] w-[350px] sm:w-[70vh] sm:max-w-[1200px] h-[600px] sm:max-h-[800px] overflow-y-scroll overflow-x-hidden p-7 relative">
+        <div className="flex flex-col items-center border-black border-2 bg-white m-[4px] w-[350px] sm:w-[70vw] h-[600px] sm:max-h-[800px] overflow-y-scroll overflow-x-hidden p-7 relative bg-browser-bg bg-repeat-round">
           <h1 className="font-chicago text-sm fixed top-3 right-3 sm:right-8 outline-double p-1 z-50 bg-white">
             Close
           </h1>
@@ -26,10 +26,10 @@ function WebBrowser(props) {
             believe that programming is my most powerful tools in changing the
             world and making a difference.
           </p>
-          <h2 className="font-chicago text-left m-2 w-[97%]">Projects</h2>
-          <div>
-            <ProjectCard></ProjectCard>
-          </div>
+          <h2 className="font-chicago text-left m-2 w-[97%] max-w-[900px]">
+            Projects
+          </h2>
+          <ProjectList></ProjectList>
         </div>
       </div>
     </Draggable>

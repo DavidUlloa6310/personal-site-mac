@@ -11,6 +11,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         "mac-bg": "url('/mac_bg.jpg')",
+        "browser-bg": "url('/pixel_weave.png')",
       }),
       cursor: {
         mac: "url(/cursor.cur), pointer",
