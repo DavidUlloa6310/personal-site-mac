@@ -14,7 +14,8 @@ module.exports = {
         "browser-bg": "url('/pixel_weave.png')",
       }),
       cursor: {
-        mac: "url(/cursor.cur), pointer",
+        mac: "url(/cursor.cur), default",
+        macPointer: "url(/pointer_cursor.cur), pointer",
       },
     },
   },

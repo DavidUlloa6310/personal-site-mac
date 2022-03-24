@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function MiniMac(props) {
   return (
-    <div className={`w-7 h-7 relative ${props.className}`}>
+    <div className={`relative h-7 w-7 ${props.className}`}>
       <Image
         alt="Mac Logo"
         layout="fill"

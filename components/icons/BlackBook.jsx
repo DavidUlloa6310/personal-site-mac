@@ -5,7 +5,7 @@ import Image from "next/image";
 function BlackBook(props) {
   return (
     <div
-      className={`w-16 h-16 min-h-[4rem] min-w-[4rem] relative pointer-events-none ${props.className}`}
+      className={`pointer-events-none relative h-12 min-h-[3rem] w-12 min-w-[3rem] ${props.className}`}
     >
       <Image
         alt="YourPapyrs Logo"

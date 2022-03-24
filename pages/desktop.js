@@ -96,29 +96,29 @@ function Desktop(props) {
       {!showUI && (
         <div
           id="black_div"
-          className=" w-screen h-screen absolute bottom-0 bg-black z-50"
+          className=" absolute bottom-0 z-50 h-screen w-screen bg-black"
         ></div>
       )}
       {showUI && <Navbar id="navbar"></Navbar>}
       <main
         ref={main}
         id="desktop_main"
-        className=" bg-black bg-mac-bg bg-repeat-round w-screen h-screen bg-[length:1000px_1000px] sm:bg-[length:1000px] translate-y-[.01rem]"
+        className=" h-screen w-screen translate-y-[.01rem] bg-black bg-mac-bg bg-[length:1000px_1000px] bg-repeat-round sm:bg-[length:1000px]"
       >
         {!showUI && (
           <>
             <HappyComputer
               id="happy_computer"
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
             />
 
             <HardDrive
               id="hard_drive"
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
             />
 
             <StartupContainer
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-3/4"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 transform"
               id="startup_container"
             />
           </>

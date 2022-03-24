@@ -5,7 +5,7 @@ import Image from "next/image";
 function ProfilePic(props) {
   return (
     <div
-      className={`w-64 h-64 sm:w-72 sm:h-72 min-w-[16rem] min-h-[16rem] relative select-none ${props.className}`}
+      className={`relative h-64 min-h-[16rem] w-64 min-w-[16rem] select-none sm:h-72 sm:w-72 ${props.className}`}
     >
       <Image
         alt="David Ulloa"
