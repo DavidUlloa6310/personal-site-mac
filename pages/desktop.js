@@ -7,37 +7,30 @@ import Navbar from "../components/Navbar/Navbar";
 import StartupContainer from "../components/StartupContainer";
 import HappyComputer from "../components/icons/HappyComputer";
 import HardDrive from "../components/icons/HardDrive";
-import WebBrowser from "../components/WebBrowser/WebBrowser";
+import WebBrowser from "../components/Window/WebBrowser/WebBrowser";
 
 function Desktop(props) {
-  function addIcon() {
-    setIcons((prevIcons) => {
-      prevIcons.push(
-        <DraggableIcon
-          bounds={main}
-          icon="folder"
-          name="untitled folder"
-        ></DraggableIcon>
-      );
-      return prevIcons;
-    });
-  }
-
   let main = useRef(null);
+
+  const [activeWindows, setActiveWindows] = useState([]);
 
   const [showUI, setShowUI] = useState(false);
   const [icons, setIcons] = useState([
     <DraggableIcon
-      key={0}
-      bounds={main}
-      icon="folder"
-      name="untitled folder"
-    ></DraggableIcon>,
-    <DraggableIcon
       key={1}
       bounds={main}
       icon="macWWW"
-      name="untitled folder"
+      name="my website"
+      onDoubleClick={() => {
+        addWindow(
+          <WebBrowser
+            key={"web browser"}
+            onClose={() => {
+              removeWindow("web browser");
+            }}
+          ></WebBrowser>
+        );
+      }}
     ></DraggableIcon>,
   ]);
 
@@ -47,44 +40,67 @@ function Desktop(props) {
       height: 0,
       ease: "steps(12)",
     });
-
     timeline.from("#hard_drive", 0.1, {
       opacity: "0",
       ease: "steps(1)",
     });
-
     timeline.to("#hard_drive", 0.1, {
       opacity: "0",
       ease: "steps(1)",
     });
-
     timeline.from("#happy_computer", 0.2, {
       opacity: "0",
       ease: "steps(1)",
     });
-
     timeline.to("#happy_computer", 0.2, {
       delay: 1,
       opacity: "0",
       ease: "steps(1)",
     });
-
     timeline.from("#startup_container", 0.5, {
       opacity: "0",
       ease: "steps(1)",
     });
-
     timeline.to("#startup_container", 0.5, {
       delay: 2,
       opacity: "0",
       ease: "steps(1)",
     });
-
     timeline.add(() => {
       setShowUI(true);
     }, "+=1");
-
     timeline.play();
+  }
+
+  function addIcon(icon) {
+    setIcons((prevIcons) => {
+      prevIcons.push(icon);
+      return prevIcons;
+    });
+  }
+
+  function addWindow(window) {
+    let isDuplicate = false;
+
+    setActiveWindows((prevWindows) => {
+      prevWindows.forEach((el) => {
+        if (window.key == el.key) isDuplicate = true;
+      });
+
+      if (isDuplicate) return [...prevWindows];
+
+      return [...prevWindows, window];
+    });
+  }
+
+  function removeWindow(windowKey) {
+    let windows = [];
+
+    setActiveWindows((prevWindows) => {
+      windows = prevWindows.filter((window) => window.key != windowKey);
+      console.log(windows);
+      return [...windows];
+    });
   }
 
   useEffect(() => {
@@ -129,7 +145,9 @@ function Desktop(props) {
             return <div key={index}>{el}</div>;
           })}
 
-        <WebBrowser></WebBrowser>
+        {activeWindows.map((el) => {
+          return el;
+        })}
       </main>
     </>
   );

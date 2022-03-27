@@ -43,8 +43,11 @@ export default function Home() {
   }
 
   return (
-    <main className="flex flex-col justify-center items-center w-screen h-screen overflow-hidden cursor-default">
-      <Macintosh className="max-w-xl"></Macintosh>
+    <main className="flex h-screen w-screen cursor-default flex-col items-center justify-center overflow-hidden">
+      <h1 className=" m-9 text-center font-chicago text-6xl leading-[1.5em]">
+        Macintosh, 1984
+      </h1>
+      <Macintosh className="ml-4 max-w-xl"></Macintosh>
     </main>
   );
 }

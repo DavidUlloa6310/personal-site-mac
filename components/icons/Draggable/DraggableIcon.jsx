@@ -43,7 +43,7 @@ function DraggableIcon(props) {
       >
         <div
           ref={draggableDiv}
-          className={`flex flex-col justify-center items-center max-w-fit ${props.className}`}
+          className={`flex max-w-fit flex-col items-center justify-center ${props.className}`}
         >
           {icons[props.icon]}
           <DraggableIconText isActive={isActive}>
