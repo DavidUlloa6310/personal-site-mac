@@ -56,8 +56,9 @@ function Window(props) {
   }
 
   return (
-    <Draggable bounds="parent">
+    <Draggable bounds="parent" onDrag={setActive}>
       <div
+        onClick={setActive}
         onMouseDown={setActive}
         ref={windowRef}
         className="w-fit border-2 border-black bg-white shadow-mac"

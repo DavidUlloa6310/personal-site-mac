@@ -119,7 +119,7 @@ function Desktop(props) {
       <main
         ref={main}
         id="desktop_main"
-        className=" h-screen w-screen translate-y-[.01rem] bg-black bg-mac-bg bg-[length:1000px_1000px] bg-repeat-round sm:bg-[length:1000px]"
+        className=" h-screen w-screen translate-y-[.01rem] select-none bg-black bg-mac-bg bg-[length:1000px_1000px] bg-repeat-round sm:bg-[length:1000px]"
       >
         {!showUI && (
           <>
