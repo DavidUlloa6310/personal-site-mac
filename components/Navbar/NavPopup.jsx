@@ -11,14 +11,14 @@ function NavPopup(props) {
 
   return (
     <ol
-      className={`bg-white border-black border-2 shadow-[2px_2px_0px_0px_#000] z-10 ${props.className}`}
+      className={`z-10 border-2 border-black bg-white shadow-mac ${props.className}`}
     >
       {data.map((item, index) => {
         if (item.break) {
           return (
             <li
               key={index}
-              className="object-contain h-1 border-t-2 border-dotted border-gray-500 my-3 select-none"
+              className="my-3 h-1 select-none border-t-2 border-dotted border-gray-500 object-contain"
             ></li>
           );
         }
@@ -27,13 +27,13 @@ function NavPopup(props) {
             onMouseUp={() => {
               props.setIsSelected(false);
             }}
-            className={`flex justify-between select-none whitespace-nowrap object-contain px-5 py-2 hover:bg-black hover:text-white hover:fill-white`}
+            className={`flex select-none justify-between whitespace-nowrap object-contain px-5 py-2 hover:bg-black hover:fill-white hover:text-white`}
             key={index}
           >
             <h1>{item.text}</h1>
             {item.shortcut && (
-              <div className="whitespace-nowrap flex flex-row justify-end items-center min-w-[100px]">
-                <CommandKey className=" w-5 h-5 mx-1" />
+              <div className="flex min-w-[100px] flex-row items-center justify-end whitespace-nowrap">
+                <CommandKey className=" mx-1 h-5 w-5" />
                 {item.shortcut}
               </div>
             )}

@@ -17,6 +17,9 @@ module.exports = {
         mac: "url(/cursor.cur), default",
         macPointer: "url(/pointer_cursor.cur), pointer",
       },
+      boxShadow: {
+        mac: "2px 2px 0px 0px #000",
+      },
     },
   },
   plugins: [],

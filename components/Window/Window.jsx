@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import useOutsideAlerter from "../../utils/useOutsideAlerter";
+
+import WindowBar from "./WindowBar";
 
 import gsap from "gsap";
-
 import Draggable from "react-draggable";
 
 function Window(props) {
   const [isHidden, setIsHidden] = useState(true);
+  const [isActive, setIsActive] = useState(true);
+
+  const windowRef = useRef();
+
+  function setActive() {
+    setIsActive(true);
+  }
+
+  function setInactive() {
+    setIsActive(false);
+  }
+
+  useOutsideAlerter(windowRef, setInactive);
 
   useEffect(() => {
     let timeline = gsap.timeline();
@@ -42,7 +57,17 @@ function Window(props) {
 
   return (
     <Draggable bounds="parent">
-      <div className="w-fit" id={props.id}>
+      <div
+        onMouseDown={setActive}
+        ref={windowRef}
+        className="w-fit border-2 border-black bg-white shadow-mac"
+        id={props.id}
+      >
+        <WindowBar
+          title="My Website"
+          onClose={props.onClose}
+          isActive={isActive}
+        />
         {props.children}
       </div>
     </Draggable>
