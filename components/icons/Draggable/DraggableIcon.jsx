@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useActiveContext } from "../../../utils/ActiveContext";
 import useOutsideAlerter from "../../../utils/useOutsideAlerter";
 
 import MacWWW from "./MacWWW";
@@ -8,28 +9,40 @@ import DraggableIconText from "./DraggableIconText";
 import Draggable from "react-draggable";
 
 function DraggableIcon(props) {
-  const [isActive, setIsActive] = useState(false);
+  const { activeItem, setActiveItem } = useActiveContext();
 
   const draggableDiv = useRef();
 
   const icons = {
-    folder: <Folder isActive={isActive}></Folder>,
-    macWWW: <MacWWW isActive={isActive}></MacWWW>,
+    folder: <Folder isActive={isActive()}></Folder>,
+    macWWW: <MacWWW isActive={isActive()}></MacWWW>,
   };
 
-  function handleOutsideClick() {
-    setIsActive(false);
+  function setInactive() {
+    setActiveItem("");
   }
 
-  useOutsideAlerter(draggableDiv, handleOutsideClick);
+  function setActive() {
+    setActiveItem(props.id);
+  }
+
+  function isActive() {
+    return activeItem == props.id || activeItem == props.windowID;
+  }
+
+  useOutsideAlerter(draggableDiv, setInactive);
 
   return (
     <div
-      className={`${isActive && " z-50 "}`}
+      id={props.id}
+      className={`${
+        isActive || (activeItem == props.id && " z-50 ")
+      } w-fit min-w-[100px]`}
       onMouseDown={() => {
-        setIsActive(true);
+        setActive();
       }}
       onClick={(e) => {
+        setActive();
         if (e.detail == 2 && props.onDoubleClick) {
           props.onDoubleClick();
         }
@@ -38,7 +51,7 @@ function DraggableIcon(props) {
       <Draggable
         bounds="#desktop_main"
         onDrag={() => {
-          setIsActive(true);
+          setActive();
         }}
       >
         <div
@@ -46,7 +59,7 @@ function DraggableIcon(props) {
           className={`flex max-w-fit flex-col items-center justify-center ${props.className}`}
         >
           {icons[props.icon]}
-          <DraggableIconText isActive={isActive}>
+          <DraggableIconText isActive={isActive()}>
             {props.name}
           </DraggableIconText>
         </div>

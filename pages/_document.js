@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="blur-[0.03em] saturate-100 overflow-hidden cursor-mac">
+      <body className="cursor-mac overflow-hidden blur-[0.03em] saturate-100">
         <Main />
         <NextScript />
       </body>

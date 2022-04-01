@@ -12,7 +12,8 @@ function WebBrowser(props) {
   return (
     <Window
       hiddenClassName="min-h-[600px] min-w-[350px] sm:max-h-[800px] sm:w-[1000px]"
-      id="web_browser"
+      gsapID="web_browser"
+      id={props.id}
       onClose={props.onClose}
     >
       <div className="relative flex h-[600px] w-[350px] flex-col items-center overflow-x-hidden overflow-y-scroll bg-white bg-browser-bg bg-repeat-round p-7 sm:max-h-[800px] sm:w-[100%]">

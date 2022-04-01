@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useActiveContext } from "../../utils/ActiveContext";
 import useOutsideAlerter from "../../utils/useOutsideAlerter";
 
 import WindowBar from "./WindowBar";
@@ -8,25 +9,16 @@ import Draggable from "react-draggable";
 
 function Window(props) {
   const [isHidden, setIsHidden] = useState(true);
-  const [isActive, setIsActive] = useState(true);
+
+  const { activeItem, setActiveItem } = useActiveContext();
 
   const windowRef = useRef();
-
-  function setActive() {
-    setIsActive(true);
-  }
-
-  function setInactive() {
-    setIsActive(false);
-  }
-
-  useOutsideAlerter(windowRef, setInactive);
 
   useEffect(() => {
     let timeline = gsap.timeline();
 
     timeline.fromTo(
-      `#${props.id}`,
+      `#${props.gsapID}`,
       0.5,
       {
         scaleX: 0,
@@ -44,13 +36,27 @@ function Window(props) {
     });
 
     timeline.play();
-  }, [props.id]);
+  }, [props.gsapID]);
+
+  function setActive() {
+    if (props.id != activeItem) setActiveItem(props.id);
+  }
+
+  function isActive() {
+    return activeItem == props.id;
+  }
+
+  function setInactive() {
+    setActiveItem("");
+  }
+
+  useOutsideAlerter(windowRef, setInactive);
 
   if (isHidden) {
     return (
       <div
         className={`${props.hiddenClassName} rounded-md border-2 border-black`}
-        id={props.id}
+        id={props.gsapID}
       ></div>
     );
   }
@@ -67,7 +73,7 @@ function Window(props) {
         <WindowBar
           title="My Website"
           onClose={props.onClose}
-          isActive={isActive}
+          isActive={isActive()}
         />
         {props.children}
       </div>

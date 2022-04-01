@@ -14,6 +14,8 @@ function ProjectCard(props) {
           props.link && "cursor-macPointer underline hover:text-gray-600"
         }`}
         href={props.link}
+        target="_blank"
+        rel="noreferrer"
       >
         {props.projectName}
       </a>
@@ -44,6 +46,8 @@ function ProjectCard(props) {
               style={{ margin: "5px" }}
               size={25}
               className="cursor-macPointer hover:text-gray-600"
+              target="_blank"
+              rel="noreferrer"
             ></FaGithub>
           </a>
         )}
@@ -53,6 +57,8 @@ function ProjectCard(props) {
               style={{ margin: "5px" }}
               size={25}
               className="cursor-macPointer hover:text-gray-600"
+              target="_blank"
+              rel="noreferrer"
             ></FaYoutube>
           </a>
         )}

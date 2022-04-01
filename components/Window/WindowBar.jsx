@@ -1,4 +1,5 @@
 import React from "react";
+import { useActiveContext } from "../../utils/ActiveContext";
 
 function WindowBar(props) {
   function generateLines() {
