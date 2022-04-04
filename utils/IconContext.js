@@ -11,25 +11,19 @@ export function useIconContext() {
 }
 
 export function IconProvider(props) {
-  const { windows, setWindows, addWindow, removeWindow } = useWindowContext();
+  const { windows, setWindows, addWindow } = useWindowContext();
 
   const [icons, setIcons] = useState([
     <DraggableIcon
       key="my website"
       id="website icon"
-      windowID="website browser"
+      windowID="website_browser"
       bounds={"parent"}
       icon="macWWW"
       name="my website"
       onDoubleClick={() => {
         addWindow(
-          <WebBrowser
-            id="website browser"
-            key={"my website"}
-            onClose={() => {
-              removeWindow("my website");
-            }}
-          ></WebBrowser>
+          <WebBrowser id="website_browser" key={"my website"}></WebBrowser>
         );
       }}
     ></DraggableIcon>,

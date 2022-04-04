@@ -14,20 +14,22 @@ export function WindowProvider(props) {
 
     setWindows((prevWindows) => {
       prevWindows.forEach((el) => {
-        if (window.key == el.key) isDuplicate = true;
+        if (window.id == el.id) {
+          isDuplicate = true;
+        }
       });
 
-      if (isDuplicate) return [...prevWindows];
+      if (isDuplicate) return prevWindows;
 
       return [...prevWindows, window];
     });
   }
 
-  function removeWindow(windowKey) {
+  function removeWindow(windowID) {
     let windows = [];
 
     setWindows((prevWindows) => {
-      windows = prevWindows.filter((window) => window.key != windowKey);
+      windows = prevWindows.filter((window) => window.props.id != windowID);
       return [...windows];
     });
   }
