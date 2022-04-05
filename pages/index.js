@@ -34,7 +34,7 @@ export default function Home() {
       scaleX: 20.0,
       ease: "in",
       scaleY: 20.0,
-      y: "2250px",
+      y: "1800px",
     });
     timeline.add(() => {
       Router.push("/desktop");
@@ -43,8 +43,8 @@ export default function Home() {
   }
 
   return (
-    <main className="flex h-screen w-screen cursor-default flex-col items-center justify-center overflow-hidden">
-      <h1 className=" m-9 text-center font-chicago text-6xl leading-[1.5em]">
+    <main className="cotainer flex h-screen w-screen cursor-default flex-col items-center justify-center overflow-hidden">
+      <h1 className=" m-9 text-center font-chicago text-4xl leading-[1.5em] sm:text-6xl">
         Macintosh, 1984
       </h1>
       <Macintosh className="ml-4 max-w-xl"></Macintosh>
