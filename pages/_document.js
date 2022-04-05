@@ -29,7 +29,7 @@ export default function Document() {
       <meta name="author" content="David Ulloa"></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <body className="cursor-mac overflow-hidden blur-[0.03em] saturate-100">
+      <body className="cursor-mac overflow-hidden">
         <Main />
         <NextScript />
       </body>
