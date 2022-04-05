@@ -96,8 +96,12 @@ function Desktop(props) {
               </>
             )}
 
-            <IconList showUI={showUI} />
-            <WindowList />
+            {showUI && (
+              <>
+                <IconList />
+                <WindowList />
+              </>
+            )}
           </main>
         </IconProvider>
       </WindowProvider>

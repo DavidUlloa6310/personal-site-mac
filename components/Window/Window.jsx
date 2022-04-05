@@ -44,6 +44,8 @@ function Window(props) {
     closeTimeline.current.to(`#${props.id}`, 0.5, {
       scaleX: 0,
       scaleY: 0,
+      x: window.innerWidth / 2 - windowRef.current.clientWidth / 2,
+      y: window.innerHeight / 2 - windowRef.current.clientHeight / 2,
       ease: "steps(12)",
     });
 

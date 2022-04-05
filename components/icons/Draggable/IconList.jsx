@@ -6,10 +6,9 @@ function IconList(props) {
 
   return (
     <>
-      {props.showUI &&
-        icons.map((el, index) => {
-          return <div key={index}>{el}</div>;
-        })}
+      {icons.map((el, index) => {
+        return <div key={index}>{el}</div>;
+      })}
     </>
   );
 }

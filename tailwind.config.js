@@ -10,8 +10,9 @@ module.exports = {
         monaco: "Monaco, sans-serif",
       },
       backgroundImage: (theme) => ({
-        "mac-bg": "url('/mac_bg.jpg')",
-        "browser-bg": "url('/pixel_weave.png')",
+        "mac-bg": "url('/backgrounds/mac_bg.jpg')",
+        "browser-bg": "url('/backgrounds/pixel_weave.png')",
+        "scrollbar-bg": "url('/backgrounds/scrollbar.svg')",
       }),
       cursor: {
         mac: "url(/cursor.cur), default",

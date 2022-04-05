@@ -16,9 +16,9 @@ function Navbar(props) {
   return (
     <div
       id={props.id}
-      className="flex flex-row flex-wrap justify-center sm:justify-between h-16 sm:h-10 w-full bg-white border-b-2 border-black font-chicago text-xs sm:text-base z-10"
+      className="z-10 flex h-16 w-full flex-row flex-wrap justify-start border-b-2 border-black bg-white font-chicago text-xs sm:h-10 sm:text-base"
     >
-      <ol className="flex flex-row justify-center items-center sm:ml-6">
+      <ol className="flex flex-row items-center justify-center sm:ml-6">
         <NavItem>
           <PixelApple className=" h-5 w-5"></PixelApple>
         </NavItem>
@@ -28,12 +28,12 @@ function Navbar(props) {
         <NavItem data={labelPopupData}>Label</NavItem>
         <NavItem data={specialPopupData}>Special</NavItem>
       </ol>
-      <ol className="flex flex-row justify-center items-center sm:mr-6">
+      {/* <ol className="flex flex-row justify-center items-center sm:mr-6">
         <NavItem>?</NavItem>
         <NavItem>
           <MiniMac className="h-10 w-10"></MiniMac>
         </NavItem>
-      </ol>
+      </ol> */}
     </div>
   );
 }

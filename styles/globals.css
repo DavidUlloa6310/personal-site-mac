@@ -17,3 +17,34 @@
   font-display: swap;
   font-style: normal;
 }
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply bg-scrollbar-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid #000;
+    border-right: none;
+    height: 0px;
+    background: white;
+  }
+
+  ::-webkit-scrollbar-button:vertical:decrement:start {
+    background: white url("/arrows.svg") no-repeat 2px;
+    background-position-y: 1px;
+    border: 1px solid #000;
+    height: 16px;
+    width: 16px;
+    border-right: none;
+  }
+
+  ::-webkit-scrollbar-button:vertical:increment:end {
+    background: white url("/arrows.svg") no-repeat 2px;
+    background-position-y: -11px;
+    border: 1px solid #000;
+    height: 16px;
+    width: 16px;
+    border-right: none;
+  }
+}
