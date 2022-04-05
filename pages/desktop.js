@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import Head from "next/head";
 import { IconProvider } from "../utils/IconContext";
 import { WindowProvider } from "../utils/WindowContext";
 import { ActiveProvider } from "../utils/ActiveContext";
