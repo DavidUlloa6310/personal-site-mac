@@ -82,7 +82,7 @@ function Window(props) {
       onMouseDown={setActive}
       ref={windowRef}
       className={` ${props.hiddenClassName} ${
-        window.innerWidth < 768 ? "h-full w-full" : "w-fit"
+        window.innerWidth < 640 ? "h-full w-full" : "w-fit"
       } border-2 border-black shadow-mac`}
       id={props.id}
     >
