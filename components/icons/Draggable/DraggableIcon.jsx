@@ -37,7 +37,7 @@ function DraggableIcon(props) {
       id={props.id}
       className={`${
         isActive || (activeItem == props.id && " z-50 ")
-      } w-fit min-w-[100px]`}
+      } absolute w-fit min-w-[100px]`}
       onMouseDown={() => {
         setActive();
       }}

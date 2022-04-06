@@ -76,26 +76,36 @@ function Window(props) {
 
   useOutsideAlerter(windowRef, setInactive);
 
+  const windowContent = (
+    <div
+      onClick={setActive}
+      onMouseDown={setActive}
+      ref={windowRef}
+      className={` ${props.hiddenClassName} ${
+        window.innerWidth < 768 ? "h-full w-full" : "w-fit"
+      } border-2 border-black shadow-mac`}
+      id={props.id}
+    >
+      {!isHidden && (
+        <>
+          <WindowBar
+            title="My Website"
+            onClose={onClose}
+            isActive={isActive()}
+          />
+          {props.children}
+        </>
+      )}
+    </div>
+  );
+
+  if (window.innerWidth < 1000) {
+    return windowContent;
+  }
+
   return (
     <Draggable bounds="parent" onDrag={setActive}>
-      <div
-        onClick={setActive}
-        onMouseDown={setActive}
-        ref={windowRef}
-        className={` ${props.hiddenClassName} w-fit border-2 border-black shadow-mac`}
-        id={props.id}
-      >
-        {!isHidden && (
-          <>
-            <WindowBar
-              title="My Website"
-              onClose={onClose}
-              isActive={isActive()}
-            />
-            {props.children}
-          </>
-        )}
-      </div>
+      {windowContent}
     </Draggable>
   );
 }

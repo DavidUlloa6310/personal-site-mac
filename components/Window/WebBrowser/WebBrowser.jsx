@@ -16,7 +16,7 @@ function WebBrowser(props) {
       id={props.id}
       onClose={props.onClose}
     >
-      <div className="scrollbar relative flex h-[600px] w-[350px] flex-col items-center overflow-x-hidden overflow-y-scroll bg-white bg-browser-bg bg-repeat-round p-7 sm:max-h-[800px] sm:w-[100%]">
+      <div className=" scrollbar relative flex h-full w-fit flex-col items-center overflow-x-hidden overflow-y-scroll bg-white bg-browser-bg bg-repeat-round p-7 pb-24 sm:h-[600px] sm:max-h-[800px] sm:w-[100%]">
         <div className="flex flex-col items-center justify-center space-x-5 sm:flex-row">
           <ProfilePic className="pointer-events-none select-none"></ProfilePic>
           <div className="flex flex-col items-center justify-center font-monaco text-xl">

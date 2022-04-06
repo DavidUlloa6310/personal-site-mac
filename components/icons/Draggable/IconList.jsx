@@ -7,7 +7,7 @@ function IconList(props) {
   return (
     <>
       {icons.map((el, index) => {
-        return <div key={index}>{el}</div>;
+        return el;
       })}
     </>
   );
