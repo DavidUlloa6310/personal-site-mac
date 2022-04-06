@@ -11,6 +11,7 @@ export default function Home() {
     function alternatePowerButton() {
       let macintoshButton = document.getElementById("power_button");
       macintoshButton.style.cursor = "pointer";
+      macintoshButton.style.position = "relative";
       macintoshButton.style.fill = powerColor;
       macintoshButton.onclick = enlargeMacintosh;
       togglePowerColor();
