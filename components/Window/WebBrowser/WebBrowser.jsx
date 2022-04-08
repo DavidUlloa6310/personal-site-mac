@@ -30,14 +30,26 @@ function WebBrowser(props) {
               <a
                 href="https://www.linkedin.com/in/david-ulloa-785396184/"
                 className=" cursor-macPointer underline decoration-1"
+                target="_blank"
+                rel="noreferrer"
               >
                 LinkedIN
               </a>
               <a
                 href="https://github.com/DavidUlloa6310"
                 className="cursor-macPointer underline decoration-1"
+                target="_blank"
+                rel="noreferrer"
               >
                 Github
+              </a>
+              <a
+                href="https://www.dulloa.com/resume.pdf"
+                className="cursor-macPointer underline decoration-1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Resume
               </a>
             </div>
             <a
