@@ -7,7 +7,7 @@ function ProjectCard(props) {
     <div
       className={`relative flex ${
         props.short ? "h-40" : "h-72"
-      } w-60 flex-col items-center justify-around rounded-md border-2 border-black`}
+      } w-60 flex-col items-center justify-around border-2 border-black`}
     >
       <a
         className={`text max-w-full break-words p-2 text-center font-chicago ${
@@ -19,10 +19,7 @@ function ProjectCard(props) {
       >
         {props.projectName}
       </a>
-      {!props.short && props.icon}
-      <p className=" m-2 w-[90%] text-center font-monaco leading-snug">
-        {props.info}
-      </p>
+      <p className=" m-2 w-[90%] font-monaco leading-snug">{props.info}</p>
       {!props.short && (
         <>
           <h2 className=" w-[90%] border-b-2 border-dotted border-black font-chicago text-[10px]">

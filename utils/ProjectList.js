@@ -7,15 +7,21 @@ import { GiEarthAmerica } from "react-icons/gi";
 export const mainProjects = [
   <ProjectCard
     key={0}
-    projectName="YourPapyrs.com"
-    link="https://www.yourpapyrs.com"
-    icon={<BlackBook></BlackBook>}
-    info="YourPapyrs.com is a full-stack web application that allows for the posting and sharing of poems."
-    techStack={["MongoDB", "Express.JS", "React.JS", "Node.JS"]}
-    githubLink="https://github.com/DavidUlloa6310/YourPapyrs"
+    projectName="Social Fly"
+    info="Breaks down and displays Twitter data using a TensorFlow neural network. Built for ShellHacks 2022, 690 participants."
+    techStack={["Next.JS", "Tailwind.CSS", "Python", "Node.JS"]}
+    githubLink="https://github.com/Jacob8765/socialfly"
   ></ProjectCard>,
   <ProjectCard
     key={1}
+    projectName="Park Hopper"
+    link="https://park-hopper.vercel.app/"
+    info="Web App to display data on national parks based on a user's search query. Built for PantherHack 2022, 356 participants."
+    techStack={["Next.JS", "Tailwind CSS"]}
+    githubLink="https://github.com/DavidUlloa6310/park-hopper"
+  ></ProjectCard>,
+  <ProjectCard
+    key={3}
     projectName="MiamiYouthClimateSummit.com"
     icon={<GiEarthAmerica size={50}></GiEarthAmerica>}
     link="https://www.miamiyouthclimatesummit.com/"

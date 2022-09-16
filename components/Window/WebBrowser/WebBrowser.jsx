@@ -19,11 +19,11 @@ function WebBrowser(props) {
       <div className=" scrollbar relative flex h-full w-fit flex-col items-center overflow-x-hidden overflow-y-scroll bg-white bg-browser-bg bg-repeat-round p-7 pb-24 sm:h-[600px] sm:max-h-[800px] sm:w-[100%]">
         <div className="flex flex-col items-center justify-center space-x-5 sm:flex-row">
           <ProfilePic className="pointer-events-none select-none"></ProfilePic>
-          <div className="flex flex-col items-center justify-center font-monaco text-xl">
-            <h1 className="m-5 text-center font-chicago text-4xl leading-[3.5rem] underline decoration-4">
+          <div className="flex flex-col justify-center font-monaco text-xl">
+            <h1 className="text-center font-chicago text-4xl leading-[3.5rem] underline decoration-4">
               David Ulloa
             </h1>
-            <h3 className="font-monaco text-xl">
+            <h3 className="mb-1 font-monaco text-xl">
               Programmer | Full-Stack Web Developer
             </h3>
             <div className="flex space-x-2">
@@ -60,7 +60,7 @@ function WebBrowser(props) {
             </a>
           </div>
         </div>
-        <p className="m-4 w-[70%] min-w-[250px] text-center font-monaco text-lg">
+        <p className="m-4 w-[600px] min-w-[250px] font-monaco text-lg">
           So...I love programming. I wouldn&apos;t spend hours and hours working
           away on my computer making new things if I didn&apos;t. I believe that
           programming is my most powerful tools in changing the world and making
@@ -68,13 +68,8 @@ function WebBrowser(props) {
         </p>
 
         <ProjectList
-          title="Main Projects"
+          title="Recent Projects"
           projects={mainProjects}
-        ></ProjectList>
-
-        <ProjectList
-          title="Smaller Projects"
-          projects={smallProjects}
         ></ProjectList>
       </div>
     </Window>

@@ -14,14 +14,16 @@ import HappyComputer from "../components/icons/HappyComputer";
 import HardDrive from "../components/icons/HardDrive";
 import WebBrowser from "../components/Window/WebBrowser/WebBrowser";
 import WindowList from "../components/Window/WindowList";
+import SkipButton from "../components/SkipButton";
 
 function Desktop(props) {
   let main = useRef(null);
 
   const [showUI, setShowUI] = useState(false);
 
+  let timeline = gsap.timeline();
+
   function startAnimations() {
-    let timeline = gsap.timeline();
     timeline.to("#black_div", 0.35, {
       height: 0,
       ease: "steps(12)",
@@ -76,7 +78,7 @@ function Desktop(props) {
           <main
             ref={main}
             id="desktop_main"
-            className=" h-screen w-screen translate-y-[.01rem] select-none bg-black bg-mac-bg bg-[length:1000px_1000px] bg-repeat-round sm:bg-[length:1000px]"
+            className=" relative h-screen w-screen translate-y-[.01rem] select-none bg-black bg-mac-bg bg-[length:1000px_1000px] bg-repeat-round sm:bg-[length:1000px]"
           >
             {!showUI && (
               <>
@@ -93,6 +95,12 @@ function Desktop(props) {
                 <StartupContainer
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 transform"
                   id="startup_container"
+                />
+
+                <SkipButton
+                  onClick={() => {
+                    timeline.progress(1.0);
+                  }}
                 />
               </>
             )}
