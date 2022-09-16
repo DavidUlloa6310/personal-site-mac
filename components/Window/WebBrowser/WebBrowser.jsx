@@ -60,7 +60,7 @@ function WebBrowser(props) {
             </a>
           </div>
         </div>
-        <p className="m-4 w-[600px] min-w-[250px] font-monaco text-lg">
+        <p className="m-4 min-w-[250px] max-w-[600px] font-monaco text-lg">
           So...I love programming. I wouldn&apos;t spend hours and hours working
           away on my computer making new things if I didn&apos;t. I believe that
           programming is my most powerful tools in changing the world and making
