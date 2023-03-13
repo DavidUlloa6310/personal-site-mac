@@ -513,7 +513,7 @@ function SvgComponent(props) {
             x={204.16}
             filter="url(#filter4012)"
             enableBackground="new"
-            fill="#c5e3e7"
+            fill="#000"
           />
           <g transform="translate(-2224.4 -344.07) scale(4.0702)">
             <path
