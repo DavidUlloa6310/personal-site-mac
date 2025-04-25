@@ -571,12 +571,6 @@ function SvgComponent(props) {
             />
           </g>
         </g>
-        <path
-          xmlns="http://www.w3.org/2000/svg"
-          stroke="#000000"
-          transform="translate(50, 360) scale(5)"
-          d="M4 4h4M4 5h4M4 6h6M4 7h6M6 8h6M6 9h6M8 10h6M8 11h6M10 12h6M22 12h4M10 13h6M22 13h4M12 14h6M22 14h4M12 15h6M22 15h4M14 16h6M22 16h4M14 17h6M22 17h4M16 18h10M16 19h10M18 20h8M18 21h8M12 22h14M12 23h14M12 24h14M12 25h14"
-        />
       </svg>
     </>
   );
