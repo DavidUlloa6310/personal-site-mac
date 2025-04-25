@@ -18,6 +18,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Garamond";
+  src: url("/fonts/garamond.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+
 @layer utilities {
   ::-webkit-scrollbar {
     @apply bg-scrollbar-bg;

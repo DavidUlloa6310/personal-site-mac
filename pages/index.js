@@ -45,8 +45,8 @@ export default function Home() {
 
   return (
     <main className="cotainer flex h-screen w-screen cursor-default flex-col items-center justify-center">
-      <h1 className=" m-9 text-center font-chicago text-4xl leading-[1.5em] sm:text-6xl">
-        Macintosh, 1984
+      <h1 className=" m-9 text-center font-garamond text-6xl leading-[1.5em] sm:text-8xl">
+        Macintosh, 1984.
       </h1>
       <Macintosh className="ml-4 max-w-xl"></Macintosh>
     </main>
