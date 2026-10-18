@@ -1,0 +1,263 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape David Ulloa} \\ \vspace{1pt}
+    \href{mailto:dulloa6310@gmail.com}{\underline{dulloa6310@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/david-a-ulloa}{\underline{linkedin.com/in/david-a-ulloa}} $|$
+    \href{https://github.com/DavidUlloa6310}{\underline{github.com/DavidUlloa6310}} $|$
+    \href{https://davidulloa.dev}{\underline{davidulloa.dev}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Florida International University}{Miami, FL}
+      {Bachelor of Science in Computer Science}{Aug. 2022 -- May 2025}
+      % \resumeSubItem{\small{Graduate Operating Systems, Data Structures, Net-Centric Computing, Systems Programming, Computer Architecture, Software Engineering, Probability \& Statistics, Calculus I \& II, Intro to Machine Learning, Discrete Structures}}
+    % \resumeSubheading
+    %   {Google Tech Exchange}{Remote}
+    %   {Graduate in Applied Data Structures and Software Engineering taught by \textbf{Google Engineers}} {Spring 2023}
+  \resumeSubHeadingListEnd
+
+%
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading{Google, Gemini Cloud Assist}{June 2025 -- Present}{Software Engineer}{Sunnyvale, CA}
+    \resumeItemListStart
+        \resumeItem{Streamlined GCA evaluation process, designing an autonomous AutoTerraform evaluation generation harness, eliminating human bottlenecks and \textbf{expanding test suite by 60\%} (from 170 to 273 environments) with \textbf{178+ active developer invocations} in 6 months.}
+        \resumeItem{Expanded AutoTerraform for end-to-end quality flyloop, \textbf{creating 4,000+ Q\&A evaluations}, \textbf{improving instruction following of GCA Root agent from 63\% to 88\%} and used for GA launch decision of GCA.}
+        \resumeItem{Fine-tuned Gemini 2.5 Pro on synthetic GCP troubleshooting dataset, \textbf{winning team hackathon} among 20 participants, \textbf{improving offline pass rate from 61\% to 70\%} using LoRA and Batch Inference API.}
+        % \resumeItem{Removed partially empty offline evaluation labels, improving root cause, observation, and recommendation scores \textbf{from 44\% to 52\%} using custom-built Gemini CLI, GCAST Autoterraform, MCP server in \textbf{Python}.}
+    \resumeItemListEnd
+    % \resumeSubSubheading
+    % {Software Engineering Intern}{May 2024 -- August 2024}
+    % \resumeItemListStart
+    %     \resumeItem{Built a pipeline with \textbf{Go}, \textbf{Kotlin}, and \textbf{TypeScript} to fetch repositories via distributed crawling, generating \textbf{Abstract Syntax Trees} (ASTs) to extract key code snippets for \textbf{RAG}-assisted LLM services.}
+    %     \resumeItem{Generated code-specific embeddings and implemented similarity search to match user queries with relevant code, integrating with existing micro-services through \textbf{gRPC}.}
+    % \resumeItemListEnd
+    % \resumeSubheading
+    %   {Microsoft}{May 2023 -- August 2023}
+    %   {Explore, SWE + PM Intern}{Redmond, WA}
+    %   \resumeItemListStart
+    %     \resumeItem{Used \textbf{SQL}-like language, C\#, and prompt-engineering to pre-generate Bing Exploration Search Box \href{https://drive.google.com/file/d/1K73hFHpGcPHcD89lvNLv1ABPVsLmzt4t/view?usp=sharing}{\underline{suggestion chips}}, covering \textbf{1\% of Bing traffic - 1 million daily users.}}
+    %     % \resumeItem{Studied and implemented \textbf{prompt engineering} for the generation of content used in a Bing Explorational Search Box, then made change with \textbf{C\# framework} so results can be passed to the frontend UX teams \href{https://drive.google.com/file/d/1u42lAJZdYxqgZm_XwzmCSLEuH-V0HBM3/view?usp=sharing}{(\underline{example here})}.}
+    %     \resumeItemListEnd
+
+    \resumeSubheading
+      {INIT FIU}{Miami, FL}
+      {President}{January 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{Coordinated 30+ executive board members for ShellHacks 2024 - \textbf{one of the largest student-led hackathons in the US (1400 hackers, 260 projects)} and spearheaded industry relations efforts to raise over \$100,000.}
+      \resumeItemListEnd
+        
+    \resumeSubSubheading
+      {Director of Technology}{January 2023 -- January 2024}
+      \resumeItemListStart
+        % \resumeItem{Lead development of shellhacks.net to orchestrate ShellHacks 2023 hackathon (\textbf{1300 hackers, 3300 applicants}) by managing user registrations and dashboards for admins / hackers using \textbf{Next.js}, \textbf{TypeScript} and \textbf{Tailwind.}}
+        % \resumeItem{Used \textbf{Docker} and \textbf{AWS} to create \textbf{PostgreSQL} and \textbf{S3} databases for resume and applicant information and used \textbf{AWS SDK} to communicate with AWS Simple Emailing System for sending acceptance / reminder emails.}
+        \resumeItem{Led development of shellhacks.net for (\textbf{1300 hackers, 3300 applicants}) deployed using \textbf{Docker} and \textbf{AWS} hosting \textbf{PostgreSQL} and \textbf{S3} databases for applicant data, automating \textbf{AWS SDK} emails with \textbf{AWS SES}.}
+        \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+   % \resumeSubSubheading
+   %  {Software Engineer I}{Oct 2014 - Sep 2016}
+   %  \resumeItemListStart
+   %     \resumeItem{Apache Beam}
+   %       {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+   %  \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+% -------------------------------------------
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+     % ------------Roller Coaster Tycoon-------------
+         \resumeProjectHeading
+          {\textbf{Roller Coaster Tycoon Benchmark, Google IO 2026} $|$ \emph{C++, Python}}{April 2026 -- May 2026}
+          \resumeItemListStart
+            \resumeItem{Developed agent harness around open-source OpenRCT2 and `rctctl` command line tool to evaluate Gemini 3.5 Flash, Gemini 3.1 Flash \& Pro for Google IO marketing, \textbf{running autonomously for 50+ collective hours.}}
+          \resumeItemListEnd
+
+      % ------------AURA-------------
+         \resumeProjectHeading
+          {\textbf{Aura} $|$ \emph{PyTorch, Rust}}{September 2024 -- December 2024}
+          \resumeItemListStart
+            \resumeItem{Built living art installation, where pieces show the "aura" of watcher with real-time video \textbf{diffusion models}.}
+            \resumeItem{Created multi-modal training pipeline for StyleGan-V through \textbf{CLIP}, Open-Sora video-generation, and ResNet50 on 8 A100 GPUs using \textbf{HuggingFace} and \textbf{PyTorch}.}
+          \resumeItemListEnd
+
+        %--------------Mimir---------------
+        \resumeProjectHeading
+          {\textbf{Mimir, KnightHacks 2024} $|$ \emph{Go, Next.js, Python, Pandas, WeaviateDB}}{Oct 2024}
+          \resumeItemListStart
+            \resumeItem{\textbf{Won 1st Place in ServiceNow’s Accelerator Recommendation Challenge} by architecting a full-stack solution featuring a \textbf{Go} backend with vector database integration and a \textbf{Next.js} frontend, fully automated via \textbf{GitHub Actions}, \textbf{Docker}, and \textbf{GCP}.}
+          \resumeItemListEnd
+
+        %-----------------ArthasAI------------
+        \resumeProjectHeading
+          {\textbf{ArthasAI} $|$ \emph{Neo4j, Python, NumPy, Pandas}}{January 2024 -- April 2024}
+          \resumeItemListStart
+            \resumeItem{Contributed to research paper search engine, \textbf{filtering 1.7M Arxiv papers}, generating Markdown from PDFs using META's \href{https://facebookresearch.github.io/nougat/}{\underline{nougat model}}, and filter documents from AWS S3 bucket using \href{https://arxiv.org/abs/2004.12832}{\underline{\textbf{ColBERT}}}, \textbf{Neo4j}, and \href{https://arxiv.org/abs/2401.18059}{\underline{\textbf{RAPTOR}}}.}
+          \resumeItemListEnd
+
+         %-------------CodeHints-------------
+        % \resumeProjectHeading
+        %   {\textbf{CodeHints} $|$ \emph{Next.js, NoSQL (MongoDB), LangChain, GPT-4}}{Oct 2023}
+        %   \resumeItemListStart
+        %     \resumeItem{Designed and implemented a LeetCode-like interface to allow users to practice with 300+ interview problems.}
+        %     \resumeItem{Used \textbf{LangChain} to generate user-specific learning advice and graph-like visual aid by leveraging the \textbf{GPT-4} API and user's code results as context.}
+        %   \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Research}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{\textbf{ECAI 2024 - Individual Fairness with Group Constraints in GNNs}}} \\
+    \small{Propose the "Group Equality Individual Fairness" framework for node classification with \textbf{Graph Neural Networks} in \textbf{PyTorch}, achieving a \textbf{17\% improvement in fairness} without compromising utility (\href{https://doi.org/10.3233/FAIA240679}{\underline{link to paper}}).}
+ \end{itemize}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{\textbf{FIU, DARPA - Research Assistant, Robotics and Simulation Learning}}} \\
+    \small{Evaluated \textbf{VLLMs} in Isaac-Sim on Vision-Language-Action benchmarks for real world tasks, using \textbf{PyTorch} and \textbf{PPO}.}
+ \end{itemize}
+ 
+    % \resumeSubHeadingListStart
+    %     \resumeProjectHeading
+    %       {\textbf{ECAI 2024 - Individual Fairness with Group Constraints in GNNs}}{Dec 2023 - Mar 2024}
+    %       \resumeItemListStart
+    %         \resumeItem{Proposed the "Group Equality Individual Fairness" (GEIF) framework for both minimizing individual and group discrimination in node classification task with GNNs (\href{https://drive.google.com/file/d/1G1c4Zf679yjYI_NnWfMkTAdhovTigprT/view?usp=sharing}{\underline{link to paper}}).}
+    %         \resumeItem{Conducted training and implementation of GEIF in \textbf{PyTorch} against large node classification datasets (combined 50,000 nodes, 500,000 edges), \textbf{improving fairness results by 17\%} while keeping utility scores consistent.}
+    %       \resumeItemListEnd
+    % \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages \& Tools}{: Java, Kotlin, Go, Python, LangChain, C/C++, SQL (Postgres), Graph Databases (Neo4j), JavaScript, Typescript, Docker, Azure Fundamentals Cert., Tailwind / CSS} \\
+     \textbf{Libraries \& Frameworks}{: Pandas, NumPy, Matplotlib, Tensorflow, PyTorch, SciKit-Learn, React, Next.js}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+
+
+\end{document}

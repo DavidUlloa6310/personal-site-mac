@@ -24,6 +24,23 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      # Compile resume/resume.tex into the PDF the site serves at /resume.
+      # Skipped until the .tex file is committed; public/resume.pdf is used as is.
+      - name: Build resume PDF
+        if: hashFiles('resume/resume.tex') != ''
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: resume
+          root_file: resume.tex
+      - name: Publish resume PDF into the site
+        if: hashFiles('resume/resume.tex') != ''
+        run: cp resume/resume.pdf public/resume.pdf
+      - name: Attach resume PDF to the run
+        if: hashFiles('resume/resume.tex') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume
+          path: resume/resume.pdf
       - run: npm ci
       - run: npm run lint
       - run: npm run build

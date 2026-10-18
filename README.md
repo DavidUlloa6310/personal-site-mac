@@ -17,6 +17,8 @@ npm run build   # writes the static site to out/
 
 Every push to `main` builds the site and deploys `out/` to GitHub Pages through `.github/workflows/deploy.yml`. Pull requests run the same build and lint without deploying.
 
+The resume is built from LaTeX in `resume/` as part of the same workflow and served at [davidulloa.dev/resume](https://davidulloa.dev/resume). See [resume/README.md](resume/README.md).
+
 One-time setup:
 
 1. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
