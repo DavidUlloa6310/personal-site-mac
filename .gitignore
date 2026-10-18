@@ -33,3 +33,12 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# latex build output
+/resume/*.aux
+/resume/*.fdb_latexmk
+/resume/*.fls
+/resume/*.log
+/resume/*.out
+/resume/*.synctex.gz
+/resume/resume.pdf

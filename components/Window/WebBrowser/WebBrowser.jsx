@@ -44,7 +44,7 @@ function WebBrowser(props) {
                 Github
               </a>
               <a
-                href="https://www.dulloa.com/resume.pdf"
+                href="/resume.pdf"
                 className="cursor-macPointer underline decoration-1"
                 target="_blank"
                 rel="noreferrer"
