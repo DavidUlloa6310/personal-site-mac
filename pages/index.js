@@ -7,6 +7,20 @@ import Macintosh from "../components/Macintosh.jsx";
 export default function Home() {
     const [powerColor, setPowerColor] = useState("red");
 
+    function enlargeMacintosh() {
+        let timeline = gsap.timeline({ delay: 0 });
+        timeline.to("#macintosh", 5.0, {
+            scaleX: 20.0,
+            ease: "in",
+            scaleY: 20.0,
+            y: "1800px",
+        });
+        timeline.add(() => {
+            Router.push("/desktop");
+        }, 1.5);
+        timeline.play();
+    }
+
     useEffect(() => {
         function alternatePowerButton() {
             let macintoshButton = document.getElementById("power_button");
@@ -28,20 +42,6 @@ export default function Home() {
         const interval = setInterval(alternatePowerButton, 750);
         return () => clearInterval(interval);
     }, [powerColor]);
-
-    function enlargeMacintosh() {
-        let timeline = gsap.timeline({ delay: 0 });
-        timeline.to("#macintosh", 5.0, {
-            scaleX: 20.0,
-            ease: "in",
-            scaleY: 20.0,
-            y: "1800px",
-        });
-        timeline.add(() => {
-            Router.push("/desktop");
-        }, 1.5);
-        timeline.play();
-    }
 
     return (
         <main className="cotainer flex h-screen w-screen cursor-default flex-col items-center justify-center">

@@ -104,7 +104,7 @@ function Window(props) {
   }
 
   return (
-    <Draggable bounds="parent" onDrag={setActive}>
+    <Draggable bounds="parent" onDrag={setActive} nodeRef={windowRef}>
       {windowContent}
     </Draggable>
   );

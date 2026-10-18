@@ -1,6 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
+import blackBook from "../../assets/icons/black_book.png";
 
 function BlackBook(props) {
   return (
@@ -9,9 +10,9 @@ function BlackBook(props) {
     >
       <Image
         alt="YourPapyrs Logo"
-        layout="fill"
-        objectFit="contain"
-        src={require("../../assets/icons/black_book.png")}
+        fill
+        style={{ objectFit: "contain" }}
+        src={blackBook}
       ></Image>
     </div>
   );

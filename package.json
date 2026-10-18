@@ -2,27 +2,30 @@
   "name": "personal-site-mac",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "gsap": "^3.9.1",
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-draggable": "^4.4.4",
-    "react-icons": "^4.3.1"
+    "gsap": "^3",
+    "next": "^16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-draggable": "^4",
+    "react-icons": "^5"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.3",
-    "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0",
-    "postcss": "^8.4.11",
-    "prettier": "^2.6.0",
-    "prettier-plugin-tailwindcss": "^0.1.8",
-    "tailwindcss": "^3.0.23"
+    "autoprefixer": "^10.6.1",
+    "eslint": "^10",
+    "eslint-config-next": "^16.4.2",
+    "postcss": "^8.5.31",
+    "prettier": "^3.9.10",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^3.4.19"
   }
 }

@@ -49,6 +49,7 @@ function DraggableIcon(props) {
       }}
     >
       <Draggable
+        nodeRef={draggableDiv}
         bounds="#desktop_main"
         onDrag={() => {
           setActive();

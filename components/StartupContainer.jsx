@@ -1,4 +1,5 @@
 import Image from "next/image";
+import miniComputer from "../assets/icons/mini_computer.png";
 
 function StartupContainer(props) {
   return (
@@ -10,9 +11,9 @@ function StartupContainer(props) {
         <div className=" w-20 h-20 relative sm:absolute sm:top-9 sm:left-7">
           <Image
             alt="Mac Logo"
-            layout="fill"
-            objectFit="contain"
-            src={require("../assets/icons/mini_computer.png")}
+            fill
+            style={{ objectFit: "contain" }}
+            src={miniComputer}
           ></Image>
         </div>
         <h1 className="font-chicago">Welcome to Macintosh.</h1>
