@@ -1,6 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
+import profilePic from "../assets/profile_pic.jpeg";
 
 function ProfilePic(props) {
   return (
@@ -10,9 +11,9 @@ function ProfilePic(props) {
       <Image
         className = "grayscale pixelated-effect"
         alt="David Ulloa"
-        layout="fill"
-        objectFit="contain"
-        src={require("../assets/profile_pic.jpeg")}
+        fill
+        style={{ objectFit: "contain" }}
+        src={profilePic}
       ></Image>
     </div>
   );
