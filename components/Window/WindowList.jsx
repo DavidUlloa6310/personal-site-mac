@@ -8,7 +8,7 @@ function WindowList(props) {
 
   useEffect(() => {
     addWindow(
-      <WebBrowser id="website_browser" key={"my website"}></WebBrowser>
+      <WebBrowser id="website_browser" key={"my website"}></WebBrowser>,
     );
   }, []);
 

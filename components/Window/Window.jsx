@@ -56,6 +56,8 @@ function Window(props) {
 
   useEffect(() => {
     startTimeline.current.play();
+    // A newly opened window comes to the front.
+    setActiveItem(props.id);
   }, []);
 
   function setActive() {
@@ -81,7 +83,13 @@ function Window(props) {
       onClick={setActive}
       onMouseDown={setActive}
       ref={windowRef}
-      className={` ${props.hiddenClassName} ${
+      className={` ${props.positionClassName || "relative"} ${
+        isActive() ? "z-40" : "z-30"
+      } ${props.hiddenClassName} ${
+        // Only fill the window once it's open, so the zoom animation is
+        // just an outline, like the original Mac.
+        !isHidden ? props.openClassName || "" : ""
+      } ${
         window.innerWidth < 640 ? "h-full w-full" : "w-fit"
       } border-2 border-black shadow-mac`}
       id={props.id}
@@ -89,7 +97,7 @@ function Window(props) {
       {!isHidden && (
         <>
           <WindowBar
-            title="My Website"
+            title={props.title || "My Website"}
             onClose={onClose}
             isActive={isActive()}
           />

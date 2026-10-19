@@ -2,11 +2,9 @@ import React from "react";
 
 import ProfilePic from "../../ProfilePic";
 
-import ProjectList from "./ProjectList";
+import BlogList from "./BlogList";
 import Window from "../Window";
 import WindowBar from "../WindowBar";
-
-import { mainProjects, smallProjects } from "../../../utils/ProjectList";
 
 function WebBrowser(props) {
   return (
@@ -28,7 +26,7 @@ function WebBrowser(props) {
             </h3>
             <div className="flex space-x-2">
               <a
-                href="https://www.linkedin.com/in/david-ulloa-785396184/"
+                href="https://linkedin.com/in/david-a-ulloa"
                 className=" cursor-macPointer underline decoration-1"
                 target="_blank"
                 rel="noreferrer"
@@ -67,10 +65,7 @@ function WebBrowser(props) {
           a difference.
         </p>
 
-        <ProjectList
-          title="Recent Projects"
-          projects={mainProjects}
-        ></ProjectList>
+        <BlogList />
       </div>
     </Window>
   );
