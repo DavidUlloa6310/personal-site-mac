@@ -12,7 +12,19 @@
 
 @font-face {
     font-family: "Monaco";
-    src: url("/fonts/monaco.woff2") format("woff2");
+    /* monaco.woff2 plus extra hand-drawn glyphs; see scripts/extend-pixel-font.py */
+    src: url("/fonts/monaco-extended.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+/* For characters the pixel font still lacks: Chicago scaled to the same
+   pixel size, so they stay pixelated instead of falling back to a smooth font. */
+@font-face {
+    font-family: "ChicagoFallback";
+    src: url("/fonts/chicago.woff2") format("woff2");
+    size-adjust: 50%;
     font-weight: 400;
     font-display: swap;
     font-style: normal;
@@ -67,4 +79,84 @@
     image-rendering: -moz-crisp-edges;
     /* Standard */
     image-rendering: crisp-edges;
+}
+
+/* Blog posts rendered from posts/*.md */
+.post-body > * + * {
+    @apply mt-4;
+}
+
+.post-body h2 {
+    @apply font-chicago text-[12px];
+}
+
+.post-body h3 {
+    @apply font-chicago text-[12px] text-gray-600;
+}
+
+.post-body ul {
+    @apply list-disc space-y-1 pl-5;
+}
+
+.post-body ol {
+    @apply list-decimal space-y-1 pl-5;
+}
+
+.post-body a {
+    @apply cursor-macPointer underline decoration-1 underline-offset-2 hover:text-gray-600;
+}
+
+.post-body blockquote {
+    @apply border-l-2 border-black pl-4 italic;
+}
+
+.post-body img {
+    @apply max-w-full border-2 border-black;
+}
+
+.post-body code {
+    @apply bg-gray-100 px-1 font-code;
+}
+
+.post-body pre code {
+    @apply bg-transparent p-0;
+}
+
+.post-body pre {
+    @apply overflow-x-auto border-2 border-black bg-white p-4 font-code text-[26px] leading-tight shadow-mac;
+}
+
+/* 1-bit syntax highlighting: weight and shade instead of colour. */
+.post-body .hljs-keyword,
+.post-body .hljs-built_in,
+.post-body .hljs-literal,
+.post-body .hljs-type {
+    @apply underline decoration-1 underline-offset-4;
+}
+
+.post-body .hljs-title,
+.post-body .hljs-function {
+    @apply bg-black px-0.5 text-white;
+}
+
+.post-body .hljs-string,
+.post-body .hljs-number {
+    @apply text-gray-600;
+}
+
+.post-body .hljs-comment,
+.post-body .hljs-meta {
+    @apply text-gray-400;
+}
+
+.post-body table {
+    @apply w-full border-collapse border-2 border-black;
+}
+
+.post-body th {
+    @apply border-b-2 border-black bg-gray-100 px-3 py-1 text-left font-chicago text-[12px];
+}
+
+.post-body td {
+    @apply border-t border-dotted border-black px-3 py-1;
 }

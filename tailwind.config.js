@@ -7,8 +7,9 @@ module.exports = {
         extend: {
             fontFamily: {
                 chicago: "Chicago, serif",
-                monaco: "Monaco, sans-serif",
-                garamond: "Garamond, serif"
+                monaco: "Monaco, ChicagoFallback, sans-serif",
+                garamond: "Garamond, serif",
+                code: "VT323, monospace"
             },
             backgroundImage: (theme) => ({
                 "mac-bg": "url('/backgrounds/mac_bg.jpg')",

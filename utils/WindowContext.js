@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useCallback } from "react";
 
 const WindowContext = React.createContext();
 
@@ -9,12 +9,14 @@ export function useWindowContext() {
 export function WindowProvider(props) {
   const [windows, setWindows] = useState([]);
 
-  function addWindow(window) {
+  // Stable callbacks: Window rebuilds its open/close animations whenever
+  // removeWindow changes, which would hide every open window.
+  const addWindow = useCallback((window) => {
     let isDuplicate = false;
 
     setWindows((prevWindows) => {
       prevWindows.forEach((el) => {
-        if (window.id == el.id) {
+        if (window.props.id == el.props.id) {
           isDuplicate = true;
         }
       });
@@ -23,16 +25,16 @@ export function WindowProvider(props) {
 
       return [...prevWindows, window];
     });
-  }
+  }, []);
 
-  function removeWindow(windowID) {
+  const removeWindow = useCallback((windowID) => {
     let windows = [];
 
     setWindows((prevWindows) => {
       windows = prevWindows.filter((window) => window.props.id != windowID);
       return [...windows];
     });
-  }
+  }, []);
 
   return (
     <WindowContext.Provider

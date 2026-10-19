@@ -15,6 +15,8 @@ import HardDrive from "../components/icons/HardDrive";
 import WebBrowser from "../components/Window/WebBrowser/WebBrowser";
 import WindowList from "../components/Window/WindowList";
 import SkipButton from "../components/SkipButton";
+import { getPosts } from "../utils/posts";
+import { PostsProvider } from "../utils/PostsContext";
 
 function Desktop(props) {
   let main = useRef(null);
@@ -65,57 +67,64 @@ function Desktop(props) {
   }, []);
 
   return (
-    <ActiveProvider>
-      <WindowProvider>
-        <IconProvider>
-          {!showUI && (
-            <div
-              id="black_div"
-              className=" absolute bottom-0 z-50 h-screen w-screen bg-black"
-            ></div>
-          )}
-          {showUI && <Navbar id="navbar"></Navbar>}
-          <main
-            ref={main}
-            id="desktop_main"
-            className=" relative h-screen w-screen translate-y-[.01rem] select-none bg-black bg-mac-bg bg-[length:1000px_1000px] bg-repeat-round sm:bg-[length:1000px]"
-          >
+    <PostsProvider posts={props.posts}>
+      <ActiveProvider>
+        <WindowProvider>
+          <IconProvider>
             {!showUI && (
-              <>
-                <HappyComputer
-                  id="happy_computer"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
-                />
-
-                <HardDrive
-                  id="hard_drive"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
-                />
-
-                <StartupContainer
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 transform"
-                  id="startup_container"
-                />
-
-                <SkipButton
-                  onClick={() => {
-                    timeline.progress(1.0);
-                  }}
-                />
-              </>
+              <div
+                id="black_div"
+                className=" absolute bottom-0 z-50 h-screen w-screen bg-black"
+              ></div>
             )}
+            {showUI && <Navbar id="navbar"></Navbar>}
+            <main
+              ref={main}
+              id="desktop_main"
+              className=" relative h-screen w-screen translate-y-[.01rem] select-none bg-black bg-mac-bg bg-[length:1000px_1000px] bg-repeat-round sm:bg-[length:1000px]"
+            >
+              {!showUI && (
+                <>
+                  <HappyComputer
+                    id="happy_computer"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+                  />
 
-            {showUI && (
-              <>
-                <IconList />
-                <WindowList />
-              </>
-            )}
-          </main>
-        </IconProvider>
-      </WindowProvider>
-    </ActiveProvider>
+                  <HardDrive
+                    id="hard_drive"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+                  />
+
+                  <StartupContainer
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 transform"
+                    id="startup_container"
+                  />
+
+                  <SkipButton
+                    onClick={() => {
+                      timeline.progress(1.0);
+                    }}
+                  />
+                </>
+              )}
+
+              {showUI && (
+                <>
+                  <IconList />
+                  <WindowList />
+                </>
+              )}
+            </main>
+          </IconProvider>
+        </WindowProvider>
+      </ActiveProvider>
+    </PostsProvider>
   );
+}
+
+// Blog posts are read from posts/*.md when the site is built.
+export function getStaticProps() {
+  return { props: { posts: getPosts() } };
 }
 
 export default Desktop;
